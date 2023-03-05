@@ -1,7 +1,5 @@
 package com.finnplay.userregistrationsystem.constants;
 
-import jakarta.websocket.Endpoint;
-
 public interface ServerConstants {
     String DUPLICATE_ACCOUNT = "There is already an existing user registered with the same email address. Please enter a new email address!!";
     String ERROR_GENERIC_SERVER = "There was an error in the server, please contact administrator for help!!";
@@ -30,20 +28,12 @@ public interface ServerConstants {
         String REDIRECT_USER_INFO = REDIRECT + USER_INFO;
         String REDIRECT_USER_INFO_IS_SAME = REDIRECT_USER_INFO+ "?isSame";
         String REDIRECT_LOGIN_EMAIL_CHANGED = REDIRECT + LOGIN + "?emailChanged";
-
         String REDIRECT_USER_INFO_SUCCESS = REDIRECT_USER_INFO + "?success";
 
-
-
     }
-
     interface ATTRIBUTE_NAMES {
-
         String USER = "user";
         String EMAIL = "email";
         String PASSWORD = "password";
-
     }
-
-
 }

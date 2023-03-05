@@ -2,7 +2,6 @@ package com.finnplay.userregistrationsystem.entity;
 
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
