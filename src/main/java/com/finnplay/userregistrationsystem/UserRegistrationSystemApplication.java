@@ -7,8 +7,6 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class UserRegistrationSystemApplication {
-	//todo move docker-compose to environment variables
-	//todo add use ssl to the database
 
 	@Bean
 	public ModelMapper modelMapper() {
