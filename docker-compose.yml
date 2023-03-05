@@ -1,0 +1,41 @@
+version: '3.9'
+services:
+  mysqldb:
+    image: findme692/user-registration-mysql
+    container_name: mysqldb
+    restart: always
+    networks:
+      - registration-system
+    environment:
+      MYSQL_ROOT_PASSWORD: thasjuiioqm@km53kij@
+      MYSQL_DATABASE: registration
+      MYSQL_USER: ahubny
+      MYSQL_PASSWORD: inasyubm$ii5kao2lk
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin","ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 3
+  server:
+    image: findme692/user-registration-spring-boot-app
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/registration
+      - spring.datasource.username=ahubny
+      - spring.datasource.password=inasyubm$ii5kao2lk
+    networks:
+      - registration-system
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+
+volumes:
+  db_data:
+
+networks:
+  registration-system:
